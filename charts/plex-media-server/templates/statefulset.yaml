@@ -209,4 +209,14 @@ spec:
       resources:
         requests:
           storage: {{ .Values.pms.configStorage }}
+  - metadata:
+    name: pms-data
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      {{- if .Values.pms.storageClassName }}
+      storageClassName: {{ .Values.pms.storageClassName }}
+      {{- end }}
+      resources:
+        requests:
+          storage: {{ .Values.pms.dataStorage }}
   {{- end }}

@@ -37,6 +37,9 @@ pms:
   # -- The volume size to provision for the PMS database
   configStorage: 2Gi
 
+  # -- The volume size to provision for the media data
+  dataStorage: 100Gi
+
   # -- Name of an existing `PersistentVolumeClaim` for the PMS database
   # NOTE: When set, 'configStorage' and 'storageClassName' are ignored.
   configExistingClaim: ""
